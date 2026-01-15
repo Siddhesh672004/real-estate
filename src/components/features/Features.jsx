@@ -14,25 +14,25 @@ import {
 
 const Features = () => {
   const amenities = [
-    { icon: carSportOutline, title: "Parking Space" },
-    { icon: waterOutline, title: "Swimming Pool" },
-    { icon: shieldCheckmarkOutline, title: "Private Security" },
-    { icon: fitnessOutline, title: "Medical Center" },
-    { icon: libraryOutline, title: "Library Area" },
-    { icon: bedOutline, title: "King Size Beds" },
-    { icon: homeOutline, title: "Smart Homes" },
-    { icon: footballOutline, title: "Kid’s Playland" },
+    { icon: carSportOutline, title: "Parking Space", description: "Spacious indoor parking" },
+    { icon: waterOutline, title: "Swimming Pool", description: "Olympic-size pool" },
+    { icon: shieldCheckmarkOutline, title: "Private Security", description: "24/7 surveillance" },
+    { icon: fitnessOutline, title: "Fitness Center", description: "Modern gym equipment" },
+    { icon: libraryOutline, title: "Library Area", description: "Quiet study spaces" },
+    { icon: bedOutline, title: "King Size Beds", description: "Premium furnishing" },
+    { icon: homeOutline, title: "Smart Homes", description: "IoT integration" },
+    { icon: footballOutline, title: "Kid's Playland", description: "Safe play areas" },
   ];
 
   return (
-    <section className="features">
+    <section className="features" id="features">
       <div className="container">
         <p className="section-subtitle">Our Amenities</p>
-        <h2 className="h2 section-title">Building Amenities</h2>
+        <h2 className="h2 section-title">Premium Building Features</h2>
         <ul className="features-list">
           {amenities.map((amenity, index) => (
             <li key={index}>
-              <a href="/" className="features-card">
+              <a href="#features" className="features-card">
                 <div className="card-icon">
                   <IonIcon icon={amenity.icon} />
                 </div>

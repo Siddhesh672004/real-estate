@@ -8,11 +8,18 @@ import {
   logoTwitter,
   logoLinkedin,
   logoYoutube,
+  logoInstagram,
+  arrowUpOutline,
 } from "ionicons/icons";
 import logolight from "../../assets/images/logo-light.png";
+
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer-top">
         <div className="container">
           <div className="footer-brand">
@@ -20,47 +27,52 @@ const Footer = () => {
               <img src={logolight} alt="Homeverse logo" />
             </a>
             <p className="section-text">
-              Lorem Ipsum is simply dummy text of the and typesetting industry.
-              Lorem Ipsum is dummy text of the printing.
+              Your trusted partner in finding the perfect property. We connect 
+              dreams with reality through exceptional real estate services.
             </p>
             <ul className="contact-list">
               <li>
-                <a href="/" className="contact-link">
+                <a href="https://maps.google.com" className="contact-link">
                   <IonIcon icon={locationOutline} />
                   <address>Pune, Maharashtra, India</address>
                 </a>
               </li>
               <li>
-                <a href="tel:+0123456789" className="contact-link">
+                <a href="tel:+919876543210" className="contact-link">
                   <IonIcon icon={callOutline} />
-                  <span>+0123-456789</span>
+                  <span>+91 98765 43210</span>
                 </a>
               </li>
               <li>
                 <a href="mailto:contact@homeverse.com" className="contact-link">
                   <IonIcon icon={mailOutline} />
-                  <span>contact@agent.com</span>
+                  <span>contact@homeverse.com</span>
                 </a>
               </li>
             </ul>
             <ul className="social-list">
               <li>
-                <a href="/" className="social-link">
+                <a href="https://facebook.com" className="social-link" aria-label="Facebook">
                   <IonIcon icon={logoFacebook} />
                 </a>
               </li>
               <li>
-                <a href="/" className="social-link">
+                <a href="https://twitter.com" className="social-link" aria-label="Twitter">
                   <IonIcon icon={logoTwitter} />
                 </a>
               </li>
               <li>
-                <a href="/" className="social-link">
+                <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
                   <IonIcon icon={logoLinkedin} />
                 </a>
               </li>
               <li>
-                <a href="/" className="social-link">
+                <a href="https://instagram.com" className="social-link" aria-label="Instagram">
+                  <IonIcon icon={logoInstagram} />
+                </a>
+              </li>
+              <li>
+                <a href="https://youtube.com" className="social-link" aria-label="YouTube">
                   <IonIcon icon={logoYoutube} />
                 </a>
               </li>
@@ -73,34 +85,22 @@ const Footer = () => {
                 <p className="footer-list-title">Company</p>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  About
-                </a>
+                <a href="#about" className="footer-link">About Us</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Blog
-                </a>
+                <a href="#blog" className="footer-link">Blog</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  All Products
-                </a>
+                <a href="#property" className="footer-link">All Properties</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Locations Map
-                </a>
+                <a href="#features" className="footer-link">Locations</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  FAQ
-                </a>
+                <a href="#footer" className="footer-link">FAQ</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Contact us
-                </a>
+                <a href="#footer" className="footer-link">Contact Us</a>
               </li>
             </ul>
 
@@ -109,70 +109,46 @@ const Footer = () => {
                 <p className="footer-list-title">Services</p>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Order tracking
-                </a>
+                <a href="#service" className="footer-link">Buy Property</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Wish List
-                </a>
+                <a href="#service" className="footer-link">Rent Property</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Login
-                </a>
+                <a href="#service" className="footer-link">Sell Property</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  My account
-                </a>
+                <a href="#service" className="footer-link">Property Valuation</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Terms & Conditions
-                </a>
+                <a href="#service" className="footer-link">Home Loans</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Promotional Offers
-                </a>
+                <a href="#service" className="footer-link">Legal Support</a>
               </li>
             </ul>
 
             <ul className="footer-list">
               <li>
-                <p className="footer-list-title">Customer Care</p>
+                <p className="footer-list-title">Quick Links</p>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Login
-                </a>
+                <a href="#footer" className="footer-link">Privacy Policy</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  My account
-                </a>
+                <a href="#footer" className="footer-link">Terms of Service</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Wish List
-                </a>
+                <a href="#footer" className="footer-link">Disclaimer</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Order tracking
-                </a>
+                <a href="#footer" className="footer-link">Careers</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  FAQ
-                </a>
+                <a href="#footer" className="footer-link">Sitemap</a>
               </li>
               <li>
-                <a href="/" className="footer-link">
-                  Contact us
-                </a>
+                <a href="#footer" className="footer-link">Support</a>
               </li>
             </ul>
           </div>
@@ -182,10 +158,29 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <p className="copyright">
-            &copy; 2025 <a href="/">Siddhesh Chaudhari</a>. All Rights Reserved
+            © 2024 <a href="/">Homeverse</a>. All Rights Reserved. 
+            Crafted with ❤️ by <a href="/">Siddhesh Chaudhari</a>
           </p>
         </div>
       </div>
+
+      <button 
+        className="btn btn-primary" 
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        style={{
+          position: 'fixed',
+          bottom: '30px',
+          right: '30px',
+          width: '50px',
+          height: '50px',
+          padding: 0,
+          borderRadius: '50%',
+          zIndex: 99
+        }}
+      >
+        <IonIcon icon={arrowUpOutline} style={{ fontSize: '20px' }} />
+      </button>
     </footer>
   );
 };
