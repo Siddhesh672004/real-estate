@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import {
   mailOutline,
@@ -18,6 +19,7 @@ import logo from "../../assets/images/logo.png";
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +30,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [location]);
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   const closeNav = () => {
     setIsNavOpen(false);
+  };
+
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
   };
 
   return (
@@ -85,24 +96,24 @@ const Header = () => {
               </li>
             </ul>
 
-            <button className="header-top-btn">
+            <Link to="/properties" className="header-top-btn">
               <span>Add Listing</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="header-bottom">
         <div className="container">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <img src={logo} alt="Homeverse logo" />
-          </a>
+          </Link>
 
           <nav className={`navbar ${isNavOpen ? 'active' : ''}`} data-navbar>
             <div className="navbar-top">
-              <a href="/" className="logo">
+              <Link to="/" className="logo">
                 <img src={logo} alt="Homeverse logo" />
-              </a>
+              </Link>
 
               <button
                 className="nav-close-btn"
@@ -116,34 +127,52 @@ const Header = () => {
             <div className="navbar-bottom">
               <ul className="navbar-list">
                 <li>
-                  <a href="#home" className="navbar-link active" onClick={closeNav}>
+                  <Link 
+                    to="/" 
+                    className={`navbar-link ${isActive('/') ? 'active' : ''}`}
+                  >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#about" className="navbar-link" onClick={closeNav}>
+                  <Link 
+                    to="/about" 
+                    className={`navbar-link ${isActive('/about') ? 'active' : ''}`}
+                  >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#service" className="navbar-link" onClick={closeNav}>
+                  <Link 
+                    to="/services" 
+                    className={`navbar-link ${isActive('/services') ? 'active' : ''}`}
+                  >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#property" className="navbar-link" onClick={closeNav}>
+                  <Link 
+                    to="/properties" 
+                    className={`navbar-link ${isActive('/properties') || isActive('/property') ? 'active' : ''}`}
+                  >
                     Properties
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#blog" className="navbar-link" onClick={closeNav}>
+                  <Link 
+                    to="/blog" 
+                    className={`navbar-link ${isActive('/blog') ? 'active' : ''}`}
+                  >
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#footer" className="navbar-link" onClick={closeNav}>
+                  <Link 
+                    to="/contact" 
+                    className={`navbar-link ${isActive('/contact') ? 'active' : ''}`}
+                  >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
