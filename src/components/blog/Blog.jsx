@@ -9,7 +9,7 @@ const BlogSection = () => {
     {
       imgSrc: blog1,
       altText: "The Most Inspiring Interior Design Of 2024",
-      title: "The Most Inspiring Interior Design Of 2024",
+      title: "The Demo  Most Inspiring Interior Design Of 2024",
       date: "Jan 13, 2024",
       category: "Interior",
       author: "Admin",
