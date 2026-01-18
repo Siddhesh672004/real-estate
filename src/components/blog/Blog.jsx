@@ -10,7 +10,7 @@ const BlogSection = () => {
     {
       imgSrc: blog1,
       altText: "Modern interior design trends",
-      title: "The Most Inspiring Interior Design Trends of 2024",
+      title: "The Most Inspiring Interior Best Design Trends of 2024",
       date: "Jan 13, 2024",
       category: "Interior",
       author: "Sarah Johnson",
